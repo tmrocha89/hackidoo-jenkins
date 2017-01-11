@@ -23,6 +23,6 @@ def buildZip (env, filesToRemove){
         //remove unnecessary files
     }
 
-    zip archive: true, dir: './xpto', glob: 'excludes="**/.gitignore"', zipFile: 'hackidoo.zip' 
+    zip archive: true, dir: './', glob: 'excludes="**/.gitignore"', zipFile: 'hackidoo.zip' 
 
 }
