@@ -1,5 +1,5 @@
-def prodFilesToRemove = ['.gitignore', 'test.zip', 'test.txt', 'deleteMe.js']
-def devFilesToRemove = []
+prodFilesToRemove = ['.gitignore', 'test.zip', 'test.txt', 'deleteMe.js']
+devFilesToRemove = []
 
 node {
     stage('Cloning Project') {
