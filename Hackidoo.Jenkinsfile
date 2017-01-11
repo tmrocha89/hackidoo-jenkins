@@ -14,7 +14,7 @@ node {
         touch file: 'deleteMe.js', timestamp: 0
     }
     stage('Build a zip file') {
-        buildZip({buildFor}, devFilesToRemove)
+        buildZip(${buildFor}, devFilesToRemove)
     }
 
 
@@ -23,13 +23,13 @@ node {
 
 
 def buildZip (buildFor, filesToRemove){
-
+    def fileName = buildFor+"-hackidoo.zip"
     if (buildFor == "PROD"){
         for(item in filesToRemove){
-            sh 'echo removing {item}'
+            sh 'echo removing ${item}'
         }
     }
 
-    zip archive: true, dir: '', glob: '', zipFile: 'hackidoo.zip' 
+    zip archive: true, dir: '', glob: '', zipFile: fileName 
 
 }
