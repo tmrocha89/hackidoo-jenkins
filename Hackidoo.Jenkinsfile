@@ -27,7 +27,7 @@ def buildZip (buildFor, filesToRemove){
     //if (buildFor == "PROD"){
     sh 'echo "removing files"'
     for(item in filesToRemove){
-        println item
+        sh 'echo "removing ${item}"'
     }
     //}
 
