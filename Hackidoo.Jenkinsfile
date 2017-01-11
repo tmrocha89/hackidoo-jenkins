@@ -1,4 +1,4 @@
-def prodFilesToRemove = ['.gitignore']
+def prodFilesToRemove = ['.gitignore', 'test.zip', 'test.txt', 'deleteMe.js']
 def devFilesToRemove = []
 
 node {
@@ -14,7 +14,7 @@ node {
         touch file: 'deleteMe.js', timestamp: 0
     }
     stage('Build a zip file') {
-        buildZip('DEV', devFilesToRemove)
+        buildZip({buildFor}, devFilesToRemove)
     }
 
 
@@ -22,10 +22,12 @@ node {
 
 
 
-def buildZip (env, filesToRemove){
+def buildZip (buildFor, filesToRemove){
 
     if (env == "PROD"){
-        //remove unnecessary files
+        for(item in filesToRemove){
+            sh 'echo removing {item}'
+        }
     }
 
     zip archive: true, dir: '', glob: '', zipFile: 'hackidoo.zip' 
