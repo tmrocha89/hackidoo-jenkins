@@ -9,7 +9,7 @@ node {
         sh 'echo "Nothing to test. TDD? nop!"'
     }
     stage('Build a zip file') {
-        buildZip('DEV')
+        buildZip('DEV', devFilesToRemove)
     }
 
 
