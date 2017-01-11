@@ -25,9 +25,10 @@ node {
 def buildZip (buildFor, filesToRemove){
     def fileName = buildFor+"-hackidoo.zip"
     //if (buildFor == "PROD"){
-        for(item in filesToRemove){
-            sh 'echo removing {item}'
-        }
+    sh 'echo "removing files"'
+    for(item in filesToRemove){
+        sh 'echo "removing ${item}"'
+    }
     //}
 
     zip archive: true, dir: '', glob: '', zipFile: fileName 
