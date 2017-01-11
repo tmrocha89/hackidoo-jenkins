@@ -24,7 +24,7 @@ node {
 
 def buildZip (buildFor){
     def fileName = buildFor+"-hackidoo.zip"
-    dev list = buildFor == "DEV" ? devFilesToRemove : prodFilesToRemove 
+    def list = buildFor == "DEV" ? devFilesToRemove : prodFilesToRemove 
     sh 'echo "removing files"'
     for(item in list){
         sh 'echo "removing '+item+'"'
