@@ -14,7 +14,7 @@ node {
         touch file: 'deleteMe.js', timestamp: 0
     }
     stage('Build a zip file') {
-        buildZip(env.buildFor, devFilesToRemove)
+        buildZip(env.buildFor, prodFilesToRemove)
     }
 
 
