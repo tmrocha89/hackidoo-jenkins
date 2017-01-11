@@ -24,7 +24,7 @@ node {
 
 def buildZip (buildFor, filesToRemove){
 
-    if (env == "PROD"){
+    if (buildFor == "PROD"){
         for(item in filesToRemove){
             sh 'echo removing {item}'
         }
