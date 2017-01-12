@@ -5,18 +5,18 @@ node {
     stage('Cloning Project') {
         git 'https://github.com/tmrocha89/hackidoo'
     }
-    stage('Unit Tests') {
+    stage('Tests') {
         def tests = [:] //empty map
-        tests[0] = {
+        tests["Unit test"] = {
             node{
                 echo "Running tests A"
                 sleep 10
             }
         }
-        tests[1] = {
+        tests["Usability test"] = {
             node{
                 echo "Running more tests :)"
-                sleep 5
+                sleep 25
             }
         }
 
