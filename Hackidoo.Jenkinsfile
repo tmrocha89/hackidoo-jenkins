@@ -36,7 +36,7 @@ node {
         buildZip(env.buildFor)
     }
 
-    currentBuild.result = "SUCCESS"
+    currentBuild.result = "SUCCESSFUL"
 
 }
 
@@ -47,7 +47,10 @@ def buildZip (buildFor){
     def list = buildFor == "DEV" ? devFilesToRemove : prodFilesToRemove 
     sh 'echo "removing files"'
     for(item in list){
-        sh 'echo "removing '+item+'"'
+        if( fileExists(item)){
+            sh "rm ${item}"
+        }
+        
     }
 
     zip archive: true, dir: '', glob: '', zipFile: fileName 
