@@ -26,7 +26,7 @@ node {
         parallel tests
         //sh 'echo "Nothing to test. TDD? nop!"'
     }
-    milestone("Tests are done")
+    milestone()
     stage('Add Random Files') {
         touch file: 'test.zip', timestamp: 0
         touch file: 'test.txt', timestamp: 0
