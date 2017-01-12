@@ -44,6 +44,9 @@ node {
 
 def buildZip (buildFor){
     def fileName = buildFor+"-hackidoo.zip"
+    if( fileExists(fileName)){
+        sh "rm ${fileName}"
+    }
     def list = buildFor == "DEV" ? devFilesToRemove : prodFilesToRemove 
     sh 'echo "removing files"'
     for(item in list){
