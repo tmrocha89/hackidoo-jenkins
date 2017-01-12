@@ -2,7 +2,7 @@ prodFilesToRemove = ['.gitignore', 'test.zip', 'test.txt', 'deleteMe.js']
 devFilesToRemove = []
 
 node {
-    currentBuild.result = "STARTED"
+    //currentBuild.result = "STARTED"
     stage('Cloning Project') {
         git 'https://github.com/tmrocha89/hackidoo'
     }
@@ -36,7 +36,7 @@ node {
         buildZip(env.buildFor)
     }
 
-    currentBuild.result = "SUCCESS"
+    //currentBuild.result = "SUCCESS"
 
 }
 
