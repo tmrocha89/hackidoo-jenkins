@@ -13,12 +13,14 @@ node {
             node{
                 echo "Running tests A"
                 sleep 3
+                exit 0
             }
         }
         tests["Usability test"] = {
             node{
                 echo "Running more tests :)"
-                sleep 10
+                sleep 5
+                exit 0
             }
         }
 
