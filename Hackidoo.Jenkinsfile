@@ -6,7 +6,7 @@ node {
     stage('Cloning Project') {
         git 'https://github.com/tmrocha89/hackidoo'
     }
-    currentBuild.result = "TESTING"
+    //currentBuild.result = "TESTING"
     stage('Tests') {
         def tests = [:] //empty map
         tests["Unit test"] = {
